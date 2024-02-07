@@ -47,11 +47,11 @@ usecases = [
     ("uefi http arm",None,'HTTPClient', 0x13), # arm
     ]
 
-usecases = [
-    ("ipxe", "iPXE", 'PXEClient:Arch:00000', None),
-    ("ipxe uefi 7", 'iPXE', 'PXEClient:Arch:00007:UNDI:003000', 7),
-    ("ipxe uefi 9", 'iPXE', 'PXEClient:Arch:00009:UNDI:003010', 9)
-    ]
+# usecases = [
+#     ("ipxe", "iPXE", 'PXEClient:Arch:00000', None),
+#     ("ipxe uefi 7", 'iPXE', 'PXEClient:Arch:00007:UNDI:003000', 7),
+#     ("ipxe uefi 9", 'iPXE', 'PXEClient:Arch:00009:UNDI:003010', 9)
+#     ]
 
 print("Start sniffing...")
 sniffer = AsyncSniffer(count=100, filter="udp port 68 or port 68", prn=process_packet, stop_filter=stop_filter, timeout=60)
